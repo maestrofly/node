@@ -1,0 +1,11 @@
+{
+  "name": "http_server",
+  "version": "1.0.0",
+  "description": "server with http package",
+  "main": "index.js",
+  "author": "Derrick Alberto Darku",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
