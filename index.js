@@ -1,8 +1,9 @@
-const http = require ('http');
+const express = require ('express');
 
 const handleAllRequests = (requestObject, responseObject) => {
     console.log('Hi, I just received a request');
     const url = requestObject.url;
+    responseObject.setHeader("content-type", "text/html");
     if(url === '/'){
         responseObject.write("<h1>Welcome to my homepage</h1>");
     }else if(url === '/login'){
@@ -16,6 +17,8 @@ const handleAllRequests = (requestObject, responseObject) => {
     responseObject.end();
 }
 
-const server = http.createServer(handleAllRequests);
+const server = express();
+
+server.use(handleAllRequests);
 
 server.listen(3000, '127.0.0.1', ()=> console.log('server is ready to accept request') );   
